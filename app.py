@@ -33,7 +33,7 @@ if st.button("🚀 Yapay Zeka ile Analizi Başlat", use_container_width=True):
             st.write("---")
             
             # Sonucu şık bir kutu (blockquote / markdown) içinde kullanıcıya gösteriyoruz
-            st.markdown(f"```\n{rapor_sonucu}\n```")
+            st.info(rapor_sonucu)
             
             st.write("---")
             st.info("💡 Yukarıdaki analizinizi kopyalayarak veya aşağıdaki WhatsApp linkine tıklayarak Nesrin Hanım'a doğrudan ulaştırabilirsiniz.")
