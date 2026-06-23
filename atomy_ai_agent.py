@@ -129,14 +129,17 @@ def ask_atomy_ai_premium(user_name, age, city, user_complaint):
     except (ValueError, KeyError, IndexError):
         ai_sentez = FALLBACK_MESSAGE
 
+    # Secrets kutusundan WhatsApp linkini çekiyoruz, yoksa fallback link kalır
+    whatsapp_link = os.environ.get("WHATSAPP_LINK", "https://chat.whatsapp.com/EJVZBzYF8VR5BkQpUQWDQ6")
+
     final_output = (
-        f"Merhaba {user_name}, Nesrin Hanım'ın Yapay Zeka Cilt Analiz Merkezine Hoş Geldiniz!\n\n"
-        f"Şikayetiniz: \"{user_complaint}\"\n\n"
+        f"🌸 Merhaba {user_name} Hanım, Nesrin Hanım'ın Yapay Zeka Cilt Analiz Merkezine Hoş Geldiniz!\n\n"
+        f"📍 Şikayetiniz: \"{user_complaint}\"\n\n"
         f"{ai_sentez}\n\n"
-        f"Bu spesifik ürünlerin detaylı kullanım sırasını öğrenmek, bütçe dostu indirimli üyelik fırsatıyla "
+        f"👉 Bu spesifik ürünlerin detaylı kullanım sırasını öğrenmek, bütçe dostu indirimli üyelik fırsatıyla "
         f"geliş fiyatından satın almak ve Nesrin Hanım'ın yönettiği Trakya WhatsApp topluluğuna katılarak "
         f"ücretsiz deneme numunelerinizi ayırt etmek için hemen topluluğumuza katılın:\n"
-        f"{WHATSAPP_LINK}"
+        f"🔗 {whatsapp_link}" # Artık dinamik!
     )
 
     return final_output
